@@ -1,0 +1,52 @@
+models:
+  Supplier:
+    company_name: string:100
+    contact_name: string:100
+    contact_title: string:100
+    address: string
+    suburb: string:100
+    city: string:100
+    state: string:100
+    zip: integer
+    phone: string:20
+    website: string
+    relationships:
+      hasMany: Product
+
+  Unit:
+    unit: string:20
+    type: enum:solid,weight,temperature,liquid,volume
+    equivalence: string:20
+    slug: string
+    abbreviation: string:20
+    relationships:
+      belongsToMany: Product
+
+  Category:
+    name: string:100
+    description: string
+    slug: string
+    relationships:
+      hasMany: Product
+
+  Product:
+    name: string:100
+    category_id: id foreign
+    supplier_id: id foreign
+    price: decimal:7,2
+    stock: decimal:7,2
+    slug: string
+    presentation: string
+    brand: string
+    url_photo: string
+    content: decimal:7,2
+
+controllers:
+  Supplier:
+    resource: web
+  Product:
+    resource: web
+  Unit:
+    resource: web
+  Category:
+    resource: web

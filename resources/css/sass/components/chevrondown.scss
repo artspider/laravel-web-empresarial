@@ -1,0 +1,24 @@
+.chevrondown-component--red {
+    border: solid 1px;
+    background-color: white;
+    color: red;
+    cursor: pointer;
+    padding: 6px;
+    width: 2rem;
+}
+
+.chevrondown-component--red.no-border {
+    border: none;
+}
+
+.chevrondown-component--transparent {
+    background-color: white;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 6px;
+    width: 2rem;
+}
+
+.chevrondown-component__icon {
+    fill: currentColor;
+}

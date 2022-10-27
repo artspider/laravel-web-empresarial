@@ -1,0 +1,25 @@
+.heart-component--red {
+    border: solid 1px;
+    background-color: white;
+    color: red;
+    cursor: pointer;
+    padding: 6px;
+    width: 2rem;
+}
+
+.heart-component--red.no-border {
+    border: none;
+}
+
+.heart-component--transparent {
+    border: solid 1px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 6px;
+    width: 2rem;
+}
+
+.heart-component__icon {
+    fill: currentColor;
+}

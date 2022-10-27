@@ -1,0 +1,57 @@
+@mixin component-mensaje-color($color) {
+    background-color: var(--bg-#{$color}-color);
+    border: var(--b-#{$color}-color) 1px solid;
+    color: var(--f-#{$color}-color);
+    display: flex;
+    justify-content: space-between;
+    /* margin: 1rem 0; */
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.25rem;
+}
+
+.mensaje--info {
+    @include component-mensaje-color(info);
+    /* background-color: #00bbff;
+    border: 1px blue solid;
+    color: blue;
+    padding: 4px 6px; */
+}
+
+.mensaje--success {
+    @include component-mensaje-color(success);
+    /* background-color: #bff695;
+    border: 1px green solid;
+    color: green;
+    padding: 10px 6px; */
+}
+
+.mensaje--warning {
+    @include component-mensaje-color(warning);
+    /* align-items: center;
+    background-color: #e7e882;
+    border: 1px yellow solid;
+    color: #927e10;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 6px; */
+}
+
+.mensaje--danger {
+    @include component-mensaje-color(danger);
+    /* background-color: #e98e86;
+    border: 1px red solid;
+    color: rgb(110, 20, 6);
+    padding: 10px 6px; */
+}
+
+.mensaje--dark {
+    @include component-mensaje-color(dark);
+    /* background-color: #adaaaa;
+    border: 1px black solid;
+    color: black;
+    padding: 10px 6px; */
+}
+
+.mensaje__button {
+    padding: 6px 10px;
+}

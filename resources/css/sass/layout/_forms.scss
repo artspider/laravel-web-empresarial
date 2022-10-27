@@ -1,0 +1,288 @@
+.form-search {
+    &__search-label {
+        display: block;
+    }
+    .search-container {
+        position: relative;
+        margin-top: 2rem;
+        width: 36.5rem;
+        height: 3rem;
+    }
+    &__search-input {
+        width: 100%;
+        height: 100%;
+        border: 1px #afafaf solid;
+        border-radius: 30px;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        &:hover {
+            box-shadow: 0px 1px 3px rgb(192, 185, 185);
+        }
+        &:focus {
+            outline: none;
+            box-shadow: 0px 1px 3px rgb(192, 185, 185);
+        }
+    }
+    &__search-icon {
+        width: 1rem !important;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        color: rgb(192, 185, 185);
+    }
+    &__mic-icon {
+        width: 1.2rem !important;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: rgb(145, 197, 246);
+    }
+}
+
+.signupform-body {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    background: rgb(166, 112, 228);
+    background: linear-gradient(
+        132deg,
+        rgba(166, 112, 228, 1) 0%,
+        rgba(136, 130, 238, 1) 39%,
+        rgba(136, 217, 228, 1) 63%,
+        rgba(89, 191, 212, 1) 100%
+    );
+    display: flex;
+    align-items: center;
+
+    .signupform-container {
+        width: 25rem;
+        height: max-content;
+        background-color: white;
+        box-shadow: 0px 1px 3px rgb(114, 110, 110);
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        border-radius: 10px;
+        padding: 3.7rem 0.5rem;
+
+        .signup-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 4.5rem;
+        }
+
+        .signupform {
+            width: 90% !important;
+            margin-left: auto;
+            margin-right: auto;
+
+            input {
+                display: block;
+                width: 100%;
+                margin-bottom: 2rem;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 1px solid gray;
+                outline: none;
+                font-size: 0.75rem;
+                letter-spacing: 1.2px;
+                padding-bottom: 0.3rem;
+                padding-top: 0.3rem;
+                &:hover {
+                    box-shadow: 2px 2px 5px gray;
+                }
+                &:focus {
+                    box-shadow: none;
+                }
+                &::placeholder {
+                    font-weight: bold;
+                    opacity: 0.6;
+                    color: #515151;
+                    line-height: 5px;
+                }
+            }
+
+            &__name-group {
+                display: flex;
+                flex-direction: row;
+                gap: 1.5rem;
+            }
+
+            button {
+                border: none;
+                color: white;
+                font-weight: 600;
+                width: 16rem;
+                height: 3rem;
+                margin-top: 4.5rem;
+                background: rgb(166, 112, 228);
+                background: linear-gradient(
+                    132deg,
+                    rgba(166, 112, 228, 1) 0%,
+                    rgba(136, 130, 238, 1) 39%,
+                    rgba(136, 217, 228, 1) 63%,
+                    rgba(89, 191, 212, 1) 100%
+                );
+                &:hover {
+                    cursor: pointer;
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}
+
+.checkout-body {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    background: rgb(166, 112, 228);
+    background: linear-gradient(
+        132deg,
+        rgba(166, 112, 228, 1) 0%,
+        rgba(136, 130, 238, 1) 39%,
+        rgba(136, 217, 228, 1) 63%,
+        rgba(89, 191, 212, 1) 100%
+    );
+    display: flex;
+    align-items: center;
+
+    > .checkout-container {
+        width: 25rem;
+        height: max-content;
+        background-color: white;
+        box-shadow: 0px 1px 3px rgb(114, 110, 110);
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        border-radius: 10px;
+        padding: 3.7rem 0.5rem;
+    }
+
+    .checkout-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 4.5rem;
+    }
+
+    .checkoutform {
+        width: 90% !important;
+        margin-left: auto;
+        margin-right: auto;
+
+        .checkoutform-group {
+            overflow: hidden;
+            margin-bottom: 0;
+            padding: 35px 25px;
+            border-bottom: none;
+            position: relative;
+            background: #edf2f5;
+            border-bottom: 1px solid #e6edf1;
+        }
+
+        label {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            z-index: 10;
+            font-size: 0.8rem;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transition: 0.3s all ease;
+            -o-transition: 0.3s all ease;
+            transition: 0.3s all ease;
+        }
+
+        input {
+            position: absolute;
+            padding-left: 5px;
+            left: 15px;
+            top: 23px;
+        }
+
+        p.hint {
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            font-size: 0.8rem;
+            color: red;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .field--not-empty label {
+            margin-top: -20px;
+            background-color: transparent;
+        }
+    }
+}
+
+.booking-form {
+    margin-top: 1rem;
+    width: 100%;
+
+    &__name-group {
+        width: 100%;
+        display: flex;
+        gap: 5px;
+    }
+    .group-form {
+        display: inline-block;
+        margin-bottom: 1rem;
+
+        &-email,
+        &-room {
+            width: 100%;
+        }
+        &-guest {
+            width: 50%;
+        }
+        select {
+            width: 100%;
+        }
+
+        label {
+            color: whitesmoke;
+            font-size: var(--xs-font-size);
+        }
+
+        input {
+            padding: 5px 5px;
+            font-size: var(--xs-font-size);
+            width: 100%;
+        }
+    }
+
+    .field--not-empty label {
+        color: whitesmoke;
+        background-color: transparent;
+        margin-top: -25px;
+    }
+
+    button {
+        display: block;
+        /* margin-left: auto */
+        background-color: #d65e3d;
+        border: none;
+        color: whitesmoke;
+        cursor: pointer;
+        font-size: var(--base-font-size);
+        font-weight: 600;
+        letter-spacing: 0.175rem;
+        margin-top: 1rem;
+        outline: none;
+        padding: 1rem 2rem;
+        border-radius: 7px;
+        box-shadow: 0px 1px 3px rgb(235, 156, 101);
+        &:hover {
+            background-color: #d76f52;
+        }
+    }
+}

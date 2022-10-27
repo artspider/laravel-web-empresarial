@@ -1,0 +1,25 @@
+.nav-component {
+    background-color: var(--secondary-color);
+    display: flex;
+    color: var(--primary-color);
+    justify-content: flex-end;
+
+    &__item {
+        border-top: 2px solid var(--secondary-color);
+        border-bottom: 2px solid var(--secondary-color);
+        padding: 1em;
+        &--selected {
+            border-bottom: 2px solid var(--primary-color);
+        }
+    }
+    &__item:hover {
+        border-bottom: 2px solid var(--primary-color);
+    }
+    a,
+    a:hover,
+    a:focus,
+    a:active {
+        text-decoration: none;
+        color: inherit;
+    }
+}
