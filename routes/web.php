@@ -19,6 +19,10 @@ Route::resource('unit', App\Http\Controllers\UnitController::class);
 
 Route::resource('category', App\Http\Controllers\CategoryController::class);
 
+Route::middleware(['auth'])->get('/home', function () {
+  return view('home');
+})->name('home');
+
 
 
 
