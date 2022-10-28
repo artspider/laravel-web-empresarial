@@ -1,5 +1,5 @@
 <x-layouts.guest>
-  <h1>En el auth-login</h1>
+  <x-utils.subtitle>En el login</x-utils.subtitle>
   @if ($errors->any())
   <div>
     <h3>Ha ocurrido un error</h3>

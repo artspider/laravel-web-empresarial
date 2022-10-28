@@ -26,11 +26,6 @@ class SupplierFactory extends Factory
             'company_name' => $this->faker->regexify('[A-Za-z0-9]{100}'),
             'contact_name' => $this->faker->regexify('[A-Za-z0-9]{100}'),
             'contact_title' => $this->faker->regexify('[A-Za-z0-9]{100}'),
-            'address' => $this->faker->word,
-            'suburb' => $this->faker->regexify('[A-Za-z0-9]{100}'),
-            'city' => $this->faker->city,
-            'state' => $this->faker->regexify('[A-Za-z0-9]{100}'),
-            'zip' => $this->faker->postcode,
             'phone' => $this->faker->phoneNumber,
             'website' => $this->faker->word,
         ];

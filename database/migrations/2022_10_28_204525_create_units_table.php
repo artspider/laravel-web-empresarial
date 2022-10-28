@@ -17,7 +17,7 @@ class CreateUnitsTable extends Migration
             $table->id();
             $table->string('unit', 20);
             $table->enum('type', ["solid","weight","temperature","liquid","volume"]);
-            $table->string('equivalence', 20);
+            $table->string('equivalence', 20)->nullable();
             $table->string('slug');
             $table->string('abbreviation', 20);
             $table->timestamps();

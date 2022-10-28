@@ -25,13 +25,8 @@ class SupplierUpdateRequest extends FormRequest
     {
         return [
             'company_name' => ['required', 'string', 'max:100'],
-            'contact_name' => ['required', 'string', 'max:100'],
-            'contact_title' => ['required', 'string', 'max:100'],
-            'address' => ['required', 'string'],
-            'suburb' => ['required', 'string', 'max:100'],
-            'city' => ['required', 'string', 'max:100'],
-            'state' => ['required', 'string', 'max:100'],
-            'zip' => ['required', 'integer'],
+            'contact_name' => ['string', 'max:100'],
+            'contact_title' => ['string', 'max:100'],
             'phone' => ['required', 'string', 'max:20'],
             'website' => ['required', 'string'],
         ];

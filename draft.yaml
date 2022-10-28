@@ -1,17 +1,26 @@
 models:
+  Address:
+    address: string
+    suburb: string:100
+    city: string:100
+    state: string:100 nullable
+    zip: integer nullable
+    country: string:100 nullable
+    addressable: morph
+
+  Image:
+    image_url: string:100 nullable
+    imageable: morph
+
   Supplier:
     company_name: string:100
     contact_name: string:100 nullable
     contact_title: string:100 nullable
-    address: string
-    suburb: string:100
-    city: string:100
-    state: string:100
-    zip: integer
     phone: string:20
     website: string
     relationships:
       hasMany: Product
+      hasOne: Address
 
   Unit:
     unit: string:20
@@ -36,10 +45,151 @@ models:
     price: decimal:7,2
     stock: decimal:7,2
     slug: string
-    presentation: string
-    brand: string
-    url_photo: string nullable
+    presentation: string:30
+    brand: string:50 nullable
+    other: text nullable
     content: decimal:7,2
+    relationships:
+      hasOne: Image
+
+  Recipe:
+    recipecategory_id: id foreign
+    unit_id: id foreign
+    name: string:100
+    description: text nullable
+    preptime: unsignedMediumInteger nullable
+    cooktime: unsignedMediumInteger nullable
+    totaltime: unsignedMediumInteger nullable
+    recipeyield: text nullable
+    diet: enum:DiabeticDiet,GlutenFreeDiet,HalalDiet,HinduDiet,KosherDiet,LowCalorieDiet,LowFatDiet,LowLactoseDiet,LowSaltDiet,VeganDiet,VegetarianDiet nullable
+    cuisine: string:100 nullable
+    price: decimal:7,2
+    cost: decimal:7,2
+    costpriceratio: decimal:7,2
+    mc: decimal:7,2
+    profit: decimal:7,2
+    deliverycharge: decimal:7,2
+    instock: boolean
+    slug: string:100
+    relationships:
+      hasMany: Image
+
+  Instruction:
+    recipe_id: id foreign
+    name: string:100
+    description: text nullable
+    image: string:100 nullable
+
+  Recipecategory:
+    name: string:100
+
+  RecipeProduct:
+    recipe_id: id foreign
+    product_id: id foreign
+    unit_id: id foreign
+    qty: decimal:7,2
+
+  Reciperating:
+    recipe_id: id foreign
+    value: unsignedSmallInteger nullable
+    count: unsignedSmallInteger nullable
+
+  Nutrition:
+    recipe_id: id foreign
+    calories: unsignedMediumInteger nullable
+    carbohydrate: unsignedMediumInteger nullable
+    cholesterol: unsignedMediumInteger nullable
+    fat: unsignedMediumInteger nullable
+    transfat: unsignedMediumInteger nullable
+    saturatedfat: unsignedMediumInteger nullable
+    unsaturatedfat: unsignedMediumInteger nullable
+    fiber: unsignedMediumInteger nullable
+    sodium: unsignedMediumInteger nullable
+    sugar: unsignedMediumInteger nullable
+    servingsize: unsignedMediumInteger nullable
+
+  Dish:
+    name: string:100
+    description: text nullable
+    servtime: unsignedMediumInteger null
+    yield: unsignedMediumInteger nullable default:1
+    cuisine: string:100 nullable
+    price: decimal:7,2
+    cost: decimal:7,2
+    costpriceratio: decimal:7,2
+    mc: decimal:7,2
+    profit: decimal:7,2
+    deliverycharge: decimal:7,2
+    instock: boolean
+    rating: unsignedSmallInteger nullable
+    slug: string:100 nullable
+    relationships:
+      hasOne: Image
+
+  DishProduct:
+    dish_id: id foreign
+    product_id: id foreign
+    unit_id: id foreign
+    qty: decimal:7,2
+
+  DishRecipe:
+    dish_id: id foreign
+    recipe_id: id foreign
+    qty: decimal:7,2 default:1.0
+
+  ProductRecipe:
+    recipe_id: id foreign
+    product_id: id foreign
+    unit_id: id foreign
+    qty: decimal:7,2
+
+  Recipebase:
+    recipe_id: id foreign
+    qty: decimal:7,2
+    qtyleft: decimal:7,2
+    waste: unsignedMediumInteger nullable
+    status: unsignedMediumInteger nullable
+
+  Customer:
+    name: string:100
+    phone: string:100 nullable
+    fav1: string:100 nullable
+    fav2: string:100 nullable
+    fav3: string:100 nullable
+    priority: unsignedSmallInteger nullable;
+
+  Order:
+    customer_id: id foreign #client
+    user_id: id foreign #Waiter
+    deliveryguy: string:100 nullable
+    deliverytime: unsignedMediumInteger nullable
+    table: unsignedMediumInteger nullable
+    note: text
+    payed: boolean default:false
+    total: decimal:8,2
+
+  DishOrder:
+    dish_id: id foreign
+    order_id: id foreign
+    command: unsignedMediumInteger nullable
+    qty: unsignedSmallInteger
+    price: decimal:7,2
+    total: decimal:7,2
+
+  Orderstatus:
+    ordr_id: id foreign
+    status: string:100 nullable
+    done: boolean nullable
+
+  Payment:
+    order_id: id foreign
+    paymethod_id: id foreign
+    payed: decimal:10,2
+    change: decimal:7,2
+
+  Paymethod:
+    type: string:100 nullable
+    description: text null
 
 controllers:
   Supplier:
@@ -49,4 +199,18 @@ controllers:
   Unit:
     resource: web
   Category:
+    resource: web
+  Recipe:
+    resource: web
+  Recipecategory:
+    resource: web
+  Dish:
+    resource: web
+  Order:
+    resource: web
+  Recipebase:
+    resource: web
+  Customer:
+    resource: web
+  Paymethod:
     resource: web

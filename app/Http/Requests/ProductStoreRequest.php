@@ -30,9 +30,9 @@ class ProductStoreRequest extends FormRequest
             'price' => ['required', 'numeric', 'between:-99999.99,99999.99'],
             'stock' => ['required', 'numeric', 'between:-99999.99,99999.99'],
             'slug' => ['required', 'string'],
-            'presentation' => ['required', 'string'],
-            'brand' => ['required', 'string'],
-            'url_photo' => ['required', 'string'],
+            'presentation' => ['required', 'string', 'max:30'],
+            'brand' => ['string', 'max:50'],
+            'other' => ['string'],
             'content' => ['required', 'numeric', 'between:-99999.99,99999.99'],
         ];
     }

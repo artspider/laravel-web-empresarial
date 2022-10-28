@@ -3,15 +3,13 @@
     --font-stack: Helvetica, sans-serif;
 
     /* Colors */
-    --primary-color-400: hsl(12, 88%, 59%); // Bright Red
-    --primary-color-300: hsl(228, 39%, 23%); // Dark Blue
+    --primary-color-400: #1e96fc;
+    --primary-color-300: #fff07c;
 
-    --accent-color-400: hsl();
+    --accent-color-400: #b33951;
 
-    --neutral-color-400: hsl(227, 12%, 61%); // Dark Grayish Blue
-    --neutral-color-300: hsl(233, 12%, 13%); // Very Dark Blue
-    --neutral-color-400: hsl(13, 100%, 96%); // Very Pale Red:
-    --neutral-color-500: hsl(0, 0%, 98%); // Vary Light Gray
+    --neutral-color-ligth: #e8ebe4;
+    --neutral-color-dark: #1c1f33;
 
     /* border */
     --border-none: none;

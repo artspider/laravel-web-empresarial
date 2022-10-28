@@ -18,11 +18,6 @@ class Supplier extends Model
         'company_name',
         'contact_name',
         'contact_title',
-        'address',
-        'suburb',
-        'city',
-        'state',
-        'zip',
         'phone',
         'website',
     ];
@@ -39,5 +34,10 @@ class Supplier extends Model
     public function products()
     {
         return $this->hasMany(Product::class);
+    }
+
+    public function address()
+    {
+        return $this->morphOne(Address::class, 'addressable');
     }
 }

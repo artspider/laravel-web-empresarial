@@ -31,9 +31,9 @@ class ProductFactory extends Factory
             'price' => $this->faker->randomFloat(2, 0, 99999.99),
             'stock' => $this->faker->randomFloat(2, 0, 99999.99),
             'slug' => $this->faker->slug,
-            'presentation' => $this->faker->word,
-            'brand' => $this->faker->word,
-            'url_photo' => $this->faker->word,
+            'presentation' => $this->faker->regexify('[A-Za-z0-9]{30}'),
+            'brand' => $this->faker->regexify('[A-Za-z0-9]{50}'),
+            'other' => $this->faker->text,
             'content' => $this->faker->paragraphs(3, true),
         ];
     }

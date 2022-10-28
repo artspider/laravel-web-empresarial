@@ -60,38 +60,17 @@ class SupplierControllerTest extends TestCase
     public function store_saves_and_redirects()
     {
         $company_name = $this->faker->word;
-        $contact_name = $this->faker->word;
-        $contact_title = $this->faker->word;
-        $address = $this->faker->word;
-        $suburb = $this->faker->word;
-        $city = $this->faker->city;
-        $state = $this->faker->word;
-        $zip = $this->faker->postcode;
         $phone = $this->faker->phoneNumber;
         $website = $this->faker->word;
 
         $response = $this->post(route('supplier.store'), [
             'company_name' => $company_name,
-            'contact_name' => $contact_name,
-            'contact_title' => $contact_title,
-            'address' => $address,
-            'suburb' => $suburb,
-            'city' => $city,
-            'state' => $state,
-            'zip' => $zip,
             'phone' => $phone,
             'website' => $website,
         ]);
 
         $suppliers = Supplier::query()
             ->where('company_name', $company_name)
-            ->where('contact_name', $contact_name)
-            ->where('contact_title', $contact_title)
-            ->where('address', $address)
-            ->where('suburb', $suburb)
-            ->where('city', $city)
-            ->where('state', $state)
-            ->where('zip', $zip)
             ->where('phone', $phone)
             ->where('website', $website)
             ->get();
@@ -152,25 +131,11 @@ class SupplierControllerTest extends TestCase
     {
         $supplier = Supplier::factory()->create();
         $company_name = $this->faker->word;
-        $contact_name = $this->faker->word;
-        $contact_title = $this->faker->word;
-        $address = $this->faker->word;
-        $suburb = $this->faker->word;
-        $city = $this->faker->city;
-        $state = $this->faker->word;
-        $zip = $this->faker->postcode;
         $phone = $this->faker->phoneNumber;
         $website = $this->faker->word;
 
         $response = $this->put(route('supplier.update', $supplier), [
             'company_name' => $company_name,
-            'contact_name' => $contact_name,
-            'contact_title' => $contact_title,
-            'address' => $address,
-            'suburb' => $suburb,
-            'city' => $city,
-            'state' => $state,
-            'zip' => $zip,
             'phone' => $phone,
             'website' => $website,
         ]);
@@ -181,13 +146,6 @@ class SupplierControllerTest extends TestCase
         $response->assertSessionHas('supplier.id', $supplier->id);
 
         $this->assertEquals($company_name, $supplier->company_name);
-        $this->assertEquals($contact_name, $supplier->contact_name);
-        $this->assertEquals($contact_title, $supplier->contact_title);
-        $this->assertEquals($address, $supplier->address);
-        $this->assertEquals($suburb, $supplier->suburb);
-        $this->assertEquals($city, $supplier->city);
-        $this->assertEquals($state, $supplier->state);
-        $this->assertEquals($zip, $supplier->zip);
         $this->assertEquals($phone, $supplier->phone);
         $this->assertEquals($website, $supplier->website);
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductsTable extends Migration
+class CreateRecipecategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,18 +15,9 @@ class CreateProductsTable extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('recipecategories', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
-            $table->foreignId('category_id')->constrained();
-            $table->foreignId('supplier_id')->constrained();
-            $table->decimal('price', 7, 2);
-            $table->decimal('stock', 7, 2);
-            $table->string('slug');
-            $table->string('presentation');
-            $table->string('brand');
-            $table->string('url_photo');
-            $table->decimal('content', 7, 2);
             $table->timestamps();
         });
 
@@ -40,6 +31,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('recipecategories');
     }
 }

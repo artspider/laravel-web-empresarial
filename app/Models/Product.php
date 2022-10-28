@@ -23,7 +23,7 @@ class Product extends Model
         'slug',
         'presentation',
         'brand',
-        'url_photo',
+        'other',
         'content',
     ];
 
@@ -40,6 +40,11 @@ class Product extends Model
         'stock' => 'decimal:2',
         'content' => 'decimal:2',
     ];
+
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
+    }
 
     public function category()
     {

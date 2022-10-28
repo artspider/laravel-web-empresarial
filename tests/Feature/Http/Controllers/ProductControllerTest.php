@@ -68,8 +68,6 @@ class ProductControllerTest extends TestCase
         $stock = $this->faker->randomFloat(/** decimal_attributes **/);
         $slug = $this->faker->slug;
         $presentation = $this->faker->word;
-        $brand = $this->faker->word;
-        $url_photo = $this->faker->word;
         $content = $this->faker->paragraphs(3, true);
 
         $response = $this->post(route('product.store'), [
@@ -80,8 +78,6 @@ class ProductControllerTest extends TestCase
             'stock' => $stock,
             'slug' => $slug,
             'presentation' => $presentation,
-            'brand' => $brand,
-            'url_photo' => $url_photo,
             'content' => $content,
         ]);
 
@@ -93,8 +89,6 @@ class ProductControllerTest extends TestCase
             ->where('stock', $stock)
             ->where('slug', $slug)
             ->where('presentation', $presentation)
-            ->where('brand', $brand)
-            ->where('url_photo', $url_photo)
             ->where('content', $content)
             ->get();
         $this->assertCount(1, $products);
@@ -160,8 +154,6 @@ class ProductControllerTest extends TestCase
         $stock = $this->faker->randomFloat(/** decimal_attributes **/);
         $slug = $this->faker->slug;
         $presentation = $this->faker->word;
-        $brand = $this->faker->word;
-        $url_photo = $this->faker->word;
         $content = $this->faker->paragraphs(3, true);
 
         $response = $this->put(route('product.update', $product), [
@@ -172,8 +164,6 @@ class ProductControllerTest extends TestCase
             'stock' => $stock,
             'slug' => $slug,
             'presentation' => $presentation,
-            'brand' => $brand,
-            'url_photo' => $url_photo,
             'content' => $content,
         ]);
 
@@ -189,8 +179,6 @@ class ProductControllerTest extends TestCase
         $this->assertEquals($stock, $product->stock);
         $this->assertEquals($slug, $product->slug);
         $this->assertEquals($presentation, $product->presentation);
-        $this->assertEquals($brand, $product->brand);
-        $this->assertEquals($url_photo, $product->url_photo);
         $this->assertEquals($content, $product->content);
     }
 

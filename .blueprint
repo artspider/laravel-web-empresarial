@@ -3,23 +3,94 @@ created:
     - app/Http/Controllers/ProductController.php
     - app/Http/Controllers/UnitController.php
     - app/Http/Controllers/CategoryController.php
+    - app/Http/Controllers/RecipeController.php
+    - app/Http/Controllers/RecipecategoryController.php
+    - app/Http/Controllers/DishController.php
+    - app/Http/Controllers/OrderController.php
+    - app/Http/Controllers/RecipebaseController.php
+    - app/Http/Controllers/CustomerController.php
+    - app/Http/Controllers/PaymethodController.php
+    - database/factories/AddressFactory.php
+    - database/factories/ImageFactory.php
     - database/factories/SupplierFactory.php
     - database/factories/UnitFactory.php
     - database/factories/CategoryFactory.php
     - database/factories/ProductFactory.php
-    - database/migrations/2022_10_19_190051_create_suppliers_table.php
-    - database/migrations/2022_10_19_190052_create_units_table.php
-    - database/migrations/2022_10_19_190053_create_categories_table.php
-    - database/migrations/2022_10_19_190054_create_products_table.php
-    - database/migrations/2022_10_19_190055_create_product_unit_table.php
+    - database/factories/RecipeFactory.php
+    - database/factories/InstructionFactory.php
+    - database/factories/RecipecategoryFactory.php
+    - database/factories/RecipeProductFactory.php
+    - database/factories/ReciperatingFactory.php
+    - database/factories/NutritionFactory.php
+    - database/factories/DishFactory.php
+    - database/factories/DishProductFactory.php
+    - database/factories/DishRecipeFactory.php
+    - database/factories/ProductRecipeFactory.php
+    - database/factories/RecipebaseFactory.php
+    - database/factories/CustomerFactory.php
+    - database/factories/OrderFactory.php
+    - database/factories/DishOrderFactory.php
+    - database/factories/OrderstatusFactory.php
+    - database/factories/PaymentFactory.php
+    - database/factories/PaymethodFactory.php
+    - database/migrations/2022_10_28_204522_create_addresses_table.php
+    - database/migrations/2022_10_28_204523_create_images_table.php
+    - database/migrations/2022_10_28_204524_create_suppliers_table.php
+    - database/migrations/2022_10_28_204525_create_units_table.php
+    - database/migrations/2022_10_28_204526_create_categories_table.php
+    - database/migrations/2022_10_28_204527_create_products_table.php
+    - database/migrations/2022_10_28_204528_create_recipes_table.php
+    - database/migrations/2022_10_28_204529_create_instructions_table.php
+    - database/migrations/2022_10_28_204530_create_recipecategories_table.php
+    - database/migrations/2022_10_28_204531_create_recipe_products_table.php
+    - database/migrations/2022_10_28_204532_create_reciperatings_table.php
+    - database/migrations/2022_10_28_204533_create_nutrition_table.php
+    - database/migrations/2022_10_28_204534_create_dishes_table.php
+    - database/migrations/2022_10_28_204535_create_dish_products_table.php
+    - database/migrations/2022_10_28_204536_create_dish_recipes_table.php
+    - database/migrations/2022_10_28_204537_create_product_recipes_table.php
+    - database/migrations/2022_10_28_204538_create_recipebases_table.php
+    - database/migrations/2022_10_28_204539_create_customers_table.php
+    - database/migrations/2022_10_28_204540_create_orders_table.php
+    - database/migrations/2022_10_28_204541_create_dish_orders_table.php
+    - database/migrations/2022_10_28_204542_create_orderstatuses_table.php
+    - database/migrations/2022_10_28_204543_create_payments_table.php
+    - database/migrations/2022_10_28_204544_create_paymethods_table.php
+    - database/migrations/2022_10_28_204545_create_product_unit_table.php
+    - app/Models/Address.php
+    - app/Models/Image.php
     - app/Models/Supplier.php
     - app/Models/Unit.php
     - app/Models/Category.php
     - app/Models/Product.php
+    - app/Models/Recipe.php
+    - app/Models/Instruction.php
+    - app/Models/Recipecategory.php
+    - app/Models/RecipeProduct.php
+    - app/Models/Reciperating.php
+    - app/Models/Nutrition.php
+    - app/Models/Dish.php
+    - app/Models/DishProduct.php
+    - app/Models/DishRecipe.php
+    - app/Models/ProductRecipe.php
+    - app/Models/Recipebase.php
+    - app/Models/Customer.php
+    - app/Models/Order.php
+    - app/Models/DishOrder.php
+    - app/Models/Orderstatus.php
+    - app/Models/Payment.php
+    - app/Models/Paymethod.php
     - tests/Feature/Http/Controllers/SupplierControllerTest.php
     - tests/Feature/Http/Controllers/ProductControllerTest.php
     - tests/Feature/Http/Controllers/UnitControllerTest.php
     - tests/Feature/Http/Controllers/CategoryControllerTest.php
+    - tests/Feature/Http/Controllers/RecipeControllerTest.php
+    - tests/Feature/Http/Controllers/RecipecategoryControllerTest.php
+    - tests/Feature/Http/Controllers/DishControllerTest.php
+    - tests/Feature/Http/Controllers/OrderControllerTest.php
+    - tests/Feature/Http/Controllers/RecipebaseControllerTest.php
+    - tests/Feature/Http/Controllers/CustomerControllerTest.php
+    - tests/Feature/Http/Controllers/PaymethodControllerTest.php
     - app/Http/Requests/SupplierStoreRequest.php
     - app/Http/Requests/SupplierUpdateRequest.php
     - app/Http/Requests/ProductStoreRequest.php
@@ -28,6 +99,48 @@ created:
     - app/Http/Requests/UnitUpdateRequest.php
     - app/Http/Requests/CategoryStoreRequest.php
     - app/Http/Requests/CategoryUpdateRequest.php
+    - app/Http/Requests/RecipeStoreRequest.php
+    - app/Http/Requests/RecipeUpdateRequest.php
+    - app/Http/Requests/RecipecategoryStoreRequest.php
+    - app/Http/Requests/RecipecategoryUpdateRequest.php
+    - app/Http/Requests/DishStoreRequest.php
+    - app/Http/Requests/DishUpdateRequest.php
+    - app/Http/Requests/OrderStoreRequest.php
+    - app/Http/Requests/OrderUpdateRequest.php
+    - app/Http/Requests/RecipebaseStoreRequest.php
+    - app/Http/Requests/RecipebaseUpdateRequest.php
+    - app/Http/Requests/CustomerStoreRequest.php
+    - app/Http/Requests/CustomerUpdateRequest.php
+    - app/Http/Requests/PaymethodStoreRequest.php
+    - app/Http/Requests/PaymethodUpdateRequest.php
+    - resources/views/recipe/index.blade.php
+    - resources/views/recipe/create.blade.php
+    - resources/views/recipe/show.blade.php
+    - resources/views/recipe/edit.blade.php
+    - resources/views/recipecategory/index.blade.php
+    - resources/views/recipecategory/create.blade.php
+    - resources/views/recipecategory/show.blade.php
+    - resources/views/recipecategory/edit.blade.php
+    - resources/views/dish/index.blade.php
+    - resources/views/dish/create.blade.php
+    - resources/views/dish/show.blade.php
+    - resources/views/dish/edit.blade.php
+    - resources/views/order/index.blade.php
+    - resources/views/order/create.blade.php
+    - resources/views/order/show.blade.php
+    - resources/views/order/edit.blade.php
+    - resources/views/recipebase/index.blade.php
+    - resources/views/recipebase/create.blade.php
+    - resources/views/recipebase/show.blade.php
+    - resources/views/recipebase/edit.blade.php
+    - resources/views/customer/index.blade.php
+    - resources/views/customer/create.blade.php
+    - resources/views/customer/show.blade.php
+    - resources/views/customer/edit.blade.php
+    - resources/views/paymethod/index.blade.php
+    - resources/views/paymethod/create.blade.php
+    - resources/views/paymethod/show.blade.php
+    - resources/views/paymethod/edit.blade.php
 updated:
     - routes/web.php
 skipped:
@@ -48,8 +161,27 @@ skipped:
     - resources/views/category/show.blade.php
     - resources/views/category/edit.blade.php
 models:
-    User: {  }
-    Supplier: { company_name: 'string:100', contact_name: 'string:100', contact_title: 'string:100', address: string, suburb: 'string:100', city: 'string:100', state: 'string:100', zip: integer, phone: 'string:20', website: string, relationships: { hasMany: Product } }
-    Unit: { unit: 'string:20', type: 'enum:solid,weight,temperature,liquid,volume', equivalence: 'string:20', slug: string, abbreviation: 'string:20', relationships: { belongsToMany: Product } }
+    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, two_factor_secret: 'text nullable', two_factor_recovery_codes: 'text nullable', two_factor_confirmed_at: 'datetime nullable', remember_token: 'string:100 nullable' }
+    Address: { address: string, suburb: 'string:100', city: 'string:100', state: 'string:100 nullable', zip: 'integer nullable', country: 'string:100 nullable', addressable: morph }
+    Image: { image_url: 'string:100 nullable', imageable: morph }
+    Supplier: { company_name: 'string:100', contact_name: 'string:100 nullable', contact_title: 'string:100 nullable', phone: 'string:20', website: string, relationships: { hasMany: Product, hasOne: Address } }
+    Unit: { unit: 'string:20', type: 'enum:solid,weight,temperature,liquid,volume', equivalence: 'string:20 nullable', slug: string, abbreviation: 'string:20', relationships: { belongsToMany: Product } }
     Category: { name: 'string:100', description: string, slug: string, relationships: { hasMany: Product } }
-    Product: { name: 'string:100', category_id: 'id foreign', supplier_id: 'id foreign', price: 'decimal:7,2', stock: 'decimal:7,2', slug: string, presentation: string, brand: string, url_photo: string, content: 'decimal:7,2' }
+    Product: { name: 'string:100', category_id: 'id foreign', supplier_id: 'id foreign', price: 'decimal:7,2', stock: 'decimal:7,2', slug: string, presentation: 'string:30', brand: 'string:50 nullable', other: 'text nullable', content: 'decimal:7,2', relationships: { hasOne: Image } }
+    Recipe: { recipecategory_id: 'id foreign', unit_id: 'id foreign', name: 'string:100', description: 'text nullable', preptime: 'unsignedMediumInteger nullable', cooktime: 'unsignedMediumInteger nullable', totaltime: 'unsignedMediumInteger nullable', recipeyield: 'text nullable', diet: 'enum:DiabeticDiet,GlutenFreeDiet,HalalDiet,HinduDiet,KosherDiet,LowCalorieDiet,LowFatDiet,LowLactoseDiet,LowSaltDiet,VeganDiet,VegetarianDiet nullable', cuisine: 'string:100 nullable', price: 'decimal:7,2', cost: 'decimal:7,2', costpriceratio: 'decimal:7,2', mc: 'decimal:7,2', profit: 'decimal:7,2', deliverycharge: 'decimal:7,2', instock: boolean, slug: 'string:100', relationships: { hasMany: Image } }
+    Instruction: { recipe_id: 'id foreign', name: 'string:100', description: 'text nullable', image: 'string:100 nullable' }
+    Recipecategory: { name: 'string:100' }
+    RecipeProduct: { recipe_id: 'id foreign', product_id: 'id foreign', unit_id: 'id foreign', qty: 'decimal:7,2' }
+    Reciperating: { recipe_id: 'id foreign', value: 'unsignedSmallInteger nullable', count: 'unsignedSmallInteger nullable' }
+    Nutrition: { recipe_id: 'id foreign', calories: 'unsignedMediumInteger nullable', carbohydrate: 'unsignedMediumInteger nullable', cholesterol: 'unsignedMediumInteger nullable', fat: 'unsignedMediumInteger nullable', transfat: 'unsignedMediumInteger nullable', saturatedfat: 'unsignedMediumInteger nullable', unsaturatedfat: 'unsignedMediumInteger nullable', fiber: 'unsignedMediumInteger nullable', sodium: 'unsignedMediumInteger nullable', sugar: 'unsignedMediumInteger nullable', servingsize: 'unsignedMediumInteger nullable' }
+    Dish: { name: 'string:100', description: 'text nullable', servtime: 'unsignedMediumInteger null', yield: 'unsignedMediumInteger nullable default:1', cuisine: 'string:100 nullable', price: 'decimal:7,2', cost: 'decimal:7,2', costpriceratio: 'decimal:7,2', mc: 'decimal:7,2', profit: 'decimal:7,2', deliverycharge: 'decimal:7,2', instock: boolean, rating: 'unsignedSmallInteger nullable', slug: 'string:100 nullable', relationships: { hasOne: Image } }
+    DishProduct: { dish_id: 'id foreign', product_id: 'id foreign', unit_id: 'id foreign', qty: 'decimal:7,2' }
+    DishRecipe: { dish_id: 'id foreign', recipe_id: 'id foreign', qty: 'decimal:7,2 default:1.0' }
+    ProductRecipe: { recipe_id: 'id foreign', product_id: 'id foreign', unit_id: 'id foreign', qty: 'decimal:7,2' }
+    Recipebase: { recipe_id: 'id foreign', qty: 'decimal:7,2', qtyleft: 'decimal:7,2', waste: 'unsignedMediumInteger nullable', status: 'unsignedMediumInteger nullable' }
+    Customer: { name: 'string:100', phone: 'string:100 nullable', fav1: 'string:100 nullable', fav2: 'string:100 nullable', fav3: 'string:100 nullable', priority: 'unsignedSmallInteger nullable;' }
+    Order: { customer_id: 'id foreign', user_id: 'id foreign', deliveryguy: 'string:100 nullable', deliverytime: 'unsignedMediumInteger nullable', table: 'unsignedMediumInteger nullable', note: text, payed: 'boolean default:false', total: 'decimal:8,2' }
+    DishOrder: { dish_id: 'id foreign', order_id: 'id foreign', command: 'unsignedMediumInteger nullable', qty: unsignedSmallInteger, price: 'decimal:7,2', total: 'decimal:7,2' }
+    Orderstatus: { ordr_id: 'id foreign', status: 'string:100 nullable', done: 'boolean nullable' }
+    Payment: { order_id: 'id foreign', paymethod_id: 'id foreign', payed: 'decimal:10,2', change: 'decimal:7,2' }
+    Paymethod: { type: 'string:100 nullable', description: 'text null' }
