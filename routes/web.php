@@ -7,7 +7,7 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-Route::get('/user', [UserController::class, 'index']);
+Route::get('/user', [UserController::class, 'index'])->name('admin-users');
 
 Route::middleware(['auth'])->get('/home', function () {
   return view('home');

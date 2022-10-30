@@ -10,7 +10,6 @@
 </head>
 
 <body>
-  <div>El header del guest va aqui</div>
 
   <div>
     {{ $slot }}

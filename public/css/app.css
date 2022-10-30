@@ -240,11 +240,23 @@
   text-align: center;
 }
 
+.font-ligth {
+  font-weight: 400;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 900;
+}
+
 a:link,
 a:visited {
   text-decoration: none;
-  color: black;
-  font-weight: 500;
+  color: var(--accent-color-400);
+  font-weight: 600;
 }
 
 a:hover {
@@ -258,6 +270,14 @@ a:hover {
   width: fit-content;
 }
 
+.fill-current {
+  fill: currentColor;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
 :root {
   /* Font */
   --font-stack: Helvetica, sans-serif;
@@ -265,7 +285,7 @@ a:hover {
   --primary-color-400: #1e96fc;
   --primary-color-300: #fff07c;
   --accent-color-400: #b33951;
-  --neutral-color-ligth: #e8ebe4;
+  --neutral-color-ligth: #f7fafc;
   --neutral-color-dark: #1c1f33;
   /* border */
   --border-none: none;
@@ -417,7 +437,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   /* margin: 1rem 0; */
-  padding: 0.75rem 1.25rem;
+  padding: 1rem 1.25rem;
   border-radius: 0.25rem;
 }
 .flash-component--danger {
@@ -427,7 +447,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   /* margin: 1rem 0; */
-  padding: 0.75rem 1.25rem;
+  padding: 1rem 1.25rem;
   border-radius: 0.25rem;
 }
 .flash-component--success {
@@ -437,7 +457,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   /* margin: 1rem 0; */
-  padding: 0.75rem 1.25rem;
+  padding: 1rem 1.25rem;
   border-radius: 0.25rem;
 }
 .flash-component--warning {
@@ -447,7 +467,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   /* margin: 1rem 0; */
-  padding: 0.75rem 1.25rem;
+  padding: 1rem 1.25rem;
   border-radius: 0.25rem;
 }
 .flash-component--dark {
@@ -457,7 +477,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   /* margin: 1rem 0; */
-  padding: 0.75rem 1.25rem;
+  padding: 1rem 1.25rem;
   border-radius: 0.25rem;
 }
 .flash-component__text {
@@ -618,8 +638,8 @@ h2 {
 
 body {
   font: 100% var(--font-stack);
-  color: var(--primary-color);
-  background-color: var(--background-color);
+  color: var(--primary-color-400);
+  background-color: var(--neutral-color-ligth);
 }
 
 .container {
@@ -1118,10 +1138,6 @@ header .navigation__cta .navigation__book-table:hover {
   text-align: center;
 }
 
-body {
-  background-color: rgb(229, 220, 220) !important;
-}
-
 .brand-ui {
   display: grid;
   row-gap: 2rem;
@@ -1158,4 +1174,137 @@ body {
 .brand-ui .brand-card__edit-icon:hover {
   cursor: pointer;
   color: #ce6363;
+}
+
+.errors {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  z-index: 10;
+}
+
+.auth-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  /* position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto auto; */
+}
+.auth-card__login {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.auth-card__login .login-wrapper {
+  text-align: center;
+  margin: 0 auto;
+}
+.auth-card__login p {
+  color: var(--neutral-color-dark);
+}
+.auth-card__logo {
+  width: 120px !important;
+}
+.auth-card__form {
+  margin-inline: auto;
+  text-align: left;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.auth-card__email {
+  position: relative;
+}
+.auth-card__email input {
+  height: 2rem;
+  padding: 1rem 2.2rem;
+  width: 20rem;
+  border-radius: 5px;
+}
+.auth-card__email .icon-user {
+  width: 1.2rem;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+.auth-card__password {
+  position: relative;
+}
+.auth-card__password input {
+  height: 2rem;
+  padding: 1rem 2.2rem;
+  width: 20rem;
+  border-radius: 5px;
+}
+.auth-card__password .icon-password {
+  width: 1.2rem;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+.auth-card__button button {
+  width: 20rem;
+  height: 2rem;
+  background-color: var(--accent-color-400);
+  color: var(--neutral-color-ligth);
+}
+.auth-card__button button:hover {
+  background-color: #d06379;
+}
+.auth-card__banner {
+  display: none;
+}
+
+@media only screen and (min-width: 900px) {
+  .auth-card {
+    flex-direction: row;
+    height: 70vh;
+    min-height: 600px;
+    border-radius: 7px;
+    box-shadow: 10px 10px 5px 0px rgb(145, 146, 156);
+    width: 80%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+  }
+  .auth-card__logo {
+    width: 80px !important;
+  }
+  .auth-card__login {
+    width: 50%;
+  }
+  .auth-card__banner {
+    background: url(/images/restaurante-login-banner2.jpg?83960c1ff492578de0b7a1950c88a3aa) no-repeat;
+    background-blend-mode: multiply;
+    background-position: center right;
+    background-size: cover;
+    height: 100%;
+    background-color: rgb(124, 124, 124);
+    width: 50%;
+    display: flex;
+    align-items: center;
+  }
+  .auth-card__container {
+    margin-inline: auto;
+    text-align: center;
+    width: 80%;
+    color: var(--neutral-color-ligth);
+  }
+  .auth-card__container img {
+    margin-inline: auto;
+  }
+  .auth-card__container p {
+    line-height: 1.6;
+  }
 }

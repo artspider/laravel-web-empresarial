@@ -236,11 +236,23 @@
     text-align: center;
 }
 
+.font-ligth {
+    font-weight: 400;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 900;
+}
+
 a:link,
 a:visited {
     text-decoration: none;
-    color: black;
-    font-weight: 500;
+    color: var(--accent-color-400);
+    font-weight: 600;
 }
 
 a:hover {
@@ -251,4 +263,12 @@ a:hover {
     display: block;
     margin-left: auto;
     width: fit-content;
+}
+
+.fill-current {
+    fill: currentColor;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
